@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skills - Aaryan Paudel</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 6px 15px rgba(255, 99, 71, 0.2);
+            --transition: all 0.3s ease;
+        }
+
+        .skills {
+            min-height: calc(100vh - 200px);
+            padding: 50px 0;
+            background: linear-gradient(135deg, #f5f5f5, #fff);
+        }
+
+        .skills-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .skills-header h1 {
+            color: var(--primary);
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .skills-header p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+
+        .skills-table-wrapper {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 50px;
+        }
+
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .skills-table thead {
+            background: linear-gradient(135deg, var(--primary), #e5533d);
+            color: white;
+        }
+
+        .skills-table th {
+            padding: 20px;
+            text-align: left;
+            font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .skills-table tbody tr {
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.3s ease;
+        }
+
+        .skills-table tbody tr:hover {
+            background-color: #f9f9f9;
+        }
+
+        .skills-table td {
+            padding: 20px;
+            font-size: 15px;
+        }
+
+        .skill-category {
+            font-weight: bold;
+            color: white;
+            border-radius: 4px;
+            padding: 8px 12px;
+        }
+
+        .skill-content {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid white;
+            transition: var(--transition);
+        }
+
+        .skill-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.3);
+        }
+
+        .skill-category.batting {
+            background: linear-gradient(135deg, #ff6347, #ff7f50);
+        }
+
+        .skill-category.bowling {
+            background: linear-gradient(135deg, #4169e1, #6495ed);
+        }
+
+        .skill-category.fielding {
+            background: linear-gradient(135deg, #32cd32, #90ee90);
+        }
+
+        .skill-category.physical {
+            background: linear-gradient(135deg, #ffa500, #ffb84d);
+        }
+
+        .category-title {
+            display: inline-block;
+        }
+
+        .progress-cell {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 25px;
+            background: #e0e0e0;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid var(--primary);
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), #ff7f50);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+
+        .progress-text {
+            font-size: 14px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .skills-insight {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+
+        .skills-insight h2 {
+            color: var(--primary);
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .insight-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .insight-card {
+            background: linear-gradient(135deg, #f9f9f9, #fff);
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .insight-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .insight-card h3 {
+            color: var(--primary);
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .insight-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+<header>
+<nav class="navbar">
+<div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+<div class="nav-left">
+<a href="index.html" class="logo">
+<img src="Image/logo.png" alt="Logo">
+<span>Aaryan Paudel</span>
+</a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="gallery.html">Gallery</a>
+<a href="skills.html">Skills</a>
+<a href="interests.html">Interests</a>
+</div>
+</div>
+<a href="contact.html" class="btn contact-btn">Contact</a>
+</div>
+</nav>
+</header>
+<main>
+<section id="skills" class="skills">
+<div class="container">
+<div class="skills-header">
+<h1>Developing the Fundamentals</h1>
+<p>Every pro was once an amateur. Here is what I'm currently working on in the nets:</p>
+</div>
+
+<div class="skills-table-wrapper">
+<table class="skills-table">
+<thead>
+<tr>
+<th>Skill Category</th>
+<th>Focus Areas</th>
+<th>Progress</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="skill-category batting">
+<div class="skill-content">
+<img src="Image/portfolio%20image%202.png" alt="Batting" class="skill-icon">
+<span class="category-title">Batting</span>
+</div>
+</td>
+<td>Grip, Stance, and Defensive Strokes</td>
+<td class="progress-cell">
+<div class="progress-bar">
+<div class="progress-fill" style="width: 65%;"></div>
+</div>
+<span class="progress-text">🏏 Building Consistency</span>
+</td>
+</tr>
+<tr>
+<td class="skill-category bowling">
+<div class="skill-content">
+<img src="Image/portfolio%20image%203.png" alt="Bowling" class="skill-icon">
+<span class="category-title">Bowling</span>
+</div>
+</td>
+<td>Line, Length, and Consistent Release</td>
+<td class="progress-cell">
+<div class="progress-bar">
+<div class="progress-fill" style="width: 50%;"></div>
+</div>
+<span class="progress-text">🎯 Improving Accuracy</span>
+</td>
+</tr>
+<tr>
+<td class="skill-category fielding">
+<div class="skill-content">
+<img src="Image/portfolio%20image%204.png" alt="Fielding" class="skill-icon">
+<span class="category-title">Fielding</span>
+</div>
+</td>
+<td>High Catches and Ground Coverage</td>
+<td class="progress-cell">
+<div class="progress-bar">
+<div class="progress-fill" style="width: 72%;"></div>
+</div>
+<span class="progress-text">⚡ Developing Reflexes</span>
+</td>
+</tr>
+<tr>
+<td class="skill-category physical">
+<div class="skill-content">
+<img src="Image/portfolio%20image%205.png" alt="Physical Training" class="skill-icon">
+<span class="category-title">Physical</span>
+</div>
+</td>
+<td>Agility, Stamina, and Core Strength</td>
+<td class="progress-cell">
+<div class="progress-bar">
+<div class="progress-fill" style="width: 80%;"></div>
+</div>
+<span class="progress-text">💪 Daily Conditioning</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="skills-insight">
+<h2>My Training Philosophy</h2>
+<div class="insight-cards">
+<div class="insight-card">
+<h3>Consistency Over Perfection</h3>
+<p>I focus on repeating fundamentals daily rather than chasing instant mastery. Small improvements compound over time.</p>
+</div>
+<div class="insight-card">
+<h3>Dedicated Practice</h3>
+<p>Every training session is structured to target specific weaknesses and build strength in key areas of the game.</p>
+</div>
+<div class="insight-card">
+<h3>Mental Toughness</h3>
+<p>Cricket is as much a mental game as it is physical. I work on developing resilience and staying focused under pressure.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="container">
+<p>&copy; 2026 Aaryan Paudel. All rights reserved.</p>
+</div>
+</footer>
+</body>
+</html>

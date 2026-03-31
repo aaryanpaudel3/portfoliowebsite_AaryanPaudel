@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interests - Aaryan Paudel</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 8px 25px rgba(255, 99, 71, 0.15);
+            --transition: all 0.3s ease;
+        }
+
+        .interests {
+            min-height: calc(100vh - 200px);
+            padding: 50px 0;
+            background: linear-gradient(135deg, #f5f5f5, #fff);
+        }
+
+        .interests-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .interests-header h1 {
+            color: var(--primary);
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .interests-header p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .interest-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid #eee;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .interest-card::before {
+            content: '';
+            position: absolute;
+            inset: 0 0 auto 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), #ff7f50, var(--primary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .interest-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .interest-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .interest-icon {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary), rgba(255, 99, 71, 0.1));
+            position: relative;
+            overflow: hidden;
+        }
+
+        .interest-icon::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.2), transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .interest-card:hover .interest-icon::before {
+            opacity: 1;
+        }
+
+        .icon-placeholder {
+            font-size: 60px;
+            z-index: 1;
+            position: relative;
+            transition: var(--transition);
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .interest-card:hover .icon-placeholder {
+            transform: scale(1.2) rotate(5deg);
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+            animation-play-state: paused;
+        }
+
+        .interest-content {
+            padding: 25px;
+            position: relative;
+        }
+
+        .interest-content::before {
+            content: '';
+            position: absolute;
+            inset: 0 auto 0 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .interest-card:hover .interest-content::before {
+            opacity: 1;
+        }
+
+        .interest-content h3 {
+            color: var(--primary);
+            font-size: 20px;
+            margin-bottom: 12px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .interest-card:hover .interest-content h3 {
+            color: #e5533d;
+            transform: translateX(5px);
+        }
+
+        .interest-content p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.7;
+            transition: color 0.3s ease;
+        }
+
+        .interest-card:hover .interest-content p {
+            color: #444;
+        }
+
+        .interests-quote {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            border-left: 4px solid var(--primary);
+        }
+
+        .interests-quote blockquote {
+            font-style: italic;
+            font-size: 18px;
+            color: #555;
+            margin: 0;
+            position: relative;
+        }
+
+        .interests-quote blockquote::before,
+        .interests-quote blockquote::after {
+            content: '"';
+            font-size: 60px;
+            color: var(--primary);
+            position: absolute;
+            font-family: serif;
+        }
+
+        .interests-quote blockquote::before {
+            left: -30px;
+            top: -20px;
+        }
+
+        .interests-quote blockquote::after {
+            right: -30px;
+            bottom: -40px;
+        }
+
+        @media (max-width: 768px) {
+            .interests-header h1 {
+                font-size: 28px;
+            }
+
+            .interests-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .interest-icon {
+                height: 180px;
+            }
+
+            .icon-placeholder {
+                font-size: 50px;
+            }
+
+            .interest-content {
+                padding: 20px;
+            }
+
+            .interest-content h3 {
+                font-size: 18px;
+            }
+
+            .interest-content p {
+                font-size: 14px;
+            }
+
+            .interests-quote {
+                padding: 25px;
+            }
+
+            .interests-quote blockquote {
+                font-size: 16px;
+            }
+
+            .interests-quote blockquote::before,
+            .interests-quote blockquote::after {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+<nav class="navbar">
+<div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+<div class="nav-left">
+<a href="index.html" class="logo">
+<img src="Image/logo.png" alt="Logo">
+<span>Aaryan Paudel</span>
+</a>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="gallery.html">Gallery</a>
+<a href="skills.html">Skills</a>
+<a href="interests.html">Interests</a>
+</div>
+</div>
+<a href="contact.html" class="btn contact-btn">Contact</a>
+</div>
+</nav>
+</header>
+<main>
+<section id="interests" class="interests">
+<div class="container">
+<div class="interests-header">
+<h1>Life Beyond the Boundary Rope</h1>
+<p>When I'm not at practice or watching match highlights, you can find me recharging with these interests:</p>
+</div>
+
+<div class="interests-grid">
+<div class="interest-card">
+<div class="interest-icon">
+<div class="icon-placeholder">📺</div>
+</div>
+<div class="interest-content">
+<h3>Analysing the Greats</h3>
+<p>I spend a lot of time watching classic matches. You can learn a lot about life by watching how the legends handled a collapsing batting order.</p>
+</div>
+</div>
+
+<div class="interest-card">
+<div class="interest-icon">
+<div class="icon-placeholder">🏃‍♂️</div>
+</div>
+<div class="interest-content">
+<h3>Fitness & Trekking</h3>
+<p>I love staying active. Whether it's a morning run or a weekend hike, being outdoors keeps my energy levels high for the next match.</p>
+</div>
+</div>
+
+<div class="interest-card">
+<div class="interest-icon">
+<div class="icon-placeholder">🎮</div>
+</div>
+<div class="interest-content">
+<h3>Tech & Gaming</h3>
+<p>Like any modern athlete, I enjoy a good session of gaming to sharpen my hand-eye coordination (at least, that's my excuse!).</p>
+</div>
+</div>
+
+<div class="interest-card">
+<div class="interest-icon">
+<div class="icon-placeholder">🎵</div>
+</div>
+<div class="interest-content">
+<h3>Music</h3>
+<p>Essential for those pre-match "get in the zone" moments.</p>
+</div>
+</div>
+</div>
+
+<div class="interests-quote">
+<blockquote>
+<p>"Cricket is my passion, but these interests keep me balanced and ready for the next challenge on the field."</p>
+</blockquote>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="container">
+<p>&copy; 2026 Aaryan Paudel. All rights reserved.</p>
+</div>
+</footer>
+</body>
+</html>
